@@ -389,7 +389,7 @@ class Kohana_Email {
 	 * @param   array    failed recipient list, by reference
 	 * @return  integer  number of emails sent
 	 */
-	public function send(array & $failed = NULL)
+	public function send(?array & $failed = NULL)
 	{
 		return Email::mailer()->send($this->_message, $failed);
 	}
@@ -402,7 +402,7 @@ class Kohana_Email {
 	 * @param   array    failed recipient list, by reference
 	 * @return  integer  number of emails sent
 	 */
-	public function batch(array $to, array & $failed = NULL)
+	public function batch(array $to, ?array & $failed = NULL)
 	{
 		// Get a copy of the current message
 		$message = clone $this->_message;
